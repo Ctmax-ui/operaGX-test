@@ -3,7 +3,10 @@ import Home from "./components/main/Home";
 import TestApi from "./components/main/TestApi";
 import Sidebar from "./components/reuseable/Sidebar";
 import BdBusters from "./components/main/BdBusters";
+import GameCallendar from "./components/main/GameCallendar";
 import "./App.css";
+import Settings from "./components/main/Settings";
+import RecentNews from "./components/main/RecentNews";
 
 const App = () => {
   return (
@@ -23,7 +26,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bdBuster" element={<BdBusters />} />
+            <Route path="/gcallendar" element={<GameCallendar />} />
+            <Route path="/news" element={<RecentNews />} />
+
             <Route path="/test" element={<TestApi />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="*" element={"404 Not found"} />
           </Routes>
         </div>
