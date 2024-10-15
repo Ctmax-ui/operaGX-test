@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { IoMdClose } from "react-icons/io";
@@ -10,7 +10,13 @@ import { BiNews } from "react-icons/bi";
 import { LuCalendarClock } from "react-icons/lu";
 
 const Sidebar = () => {
-  const [sideBarShow, setSideBarShow] = useState(true);
+  const [sideBarShow, setSideBarShow] = useState(() => {
+    const sidebarEnabled = localStorage.getItem("sidebarEnabled");
+    return sidebarEnabled === "true" ? true : false;
+  });
+  useEffect(() => {
+    localStorage.setItem("sidebarEnabled", sideBarShow);
+  }, [sideBarShow]);
 
   return (
     <>
@@ -67,7 +73,7 @@ const Sidebar = () => {
                     <BsEmojiSunglasses className="text-lg" />
                   </Link>
                 </li>
-               
+
                 <li>
                   <Link
                     className="flex justify-between items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-700 rounded-lg hover:bg-gray-100 text-nowrap"
@@ -90,9 +96,8 @@ const Sidebar = () => {
             </nav>
           </div>
           <div className="px-6 flex justify-center">
-
             <button className="flex w-full items-center justify-between gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-700 rounded-lg hover:bg-gray-100 text-nowrap">
-             Settings <IoSettingsOutline className="text-lg" />
+              Settings <IoSettingsOutline className="text-lg" />
             </button>
           </div>
         </div>

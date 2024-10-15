@@ -5,16 +5,48 @@ import { RxTrackNext, RxTrackPrevious } from "react-icons/rx";
 
 import "./animation.css";
 
+function onWidthChange(callback) {
+  function handleResize() {
+      const currentWidth = window.innerWidth;
+      callback(currentWidth);
+  }
+
+  window.addEventListener('resize', handleResize);
+
+  handleResize();
+  return () => {
+      window.removeEventListener('resize', handleResize);
+  };
+}
+
+const stopListening = onWidthChange((newWidth) => {
+  return newWidth
+});
+
 const YoutubeVideoModal = () => {
   const { showModal, setShowModal, ytContent, setYtContent, allYtContent } =
     useContext(VideoModalShower);
 
   const [parsedValue, setParsedValue] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+
+  useEffect(() => {
+    const stopListening = onWidthChange((newWidth) => {
+      setScreenWidth(newWidth);
+    });
+    console.log(screenWidth >= 400? screenWidth : screenWidth - 200);
+    return () => stopListening();
+
+  }, []);
+
   useEffect(() => {
     if (ytContent && ytContent.trailer) {
       setParsedValue(JSON.parse(ytContent.trailer));
     }
   }, [ytContent]);
+
+  
 
   const changeVideo = (direction) => {
     if (!parsedValue) return;
@@ -38,11 +70,11 @@ const YoutubeVideoModal = () => {
           showModal ? "opacity-100" : "opacity-0 pointer-events-none "
         }`}
       >
-        <div className="z-50 absolute px-10 w-full flex justify-between">
-          <button className="text-2xl  " onClick={() => changeVideo("prev")}>
+        <div className="z-50 absolute bottom-0 md:bottom-1/2 px-10 w-full flex justify-between">
+          <button className="text-2xl  text-white" onClick={() => changeVideo("prev")}>
             <RxTrackPrevious />
           </button>
-          <button className="text-2xl " onClick={() => changeVideo("next")}>
+          <button className="text-2xl text-white" onClick={() => changeVideo("next")}>
             <RxTrackNext />
           </button>
         </div>
@@ -56,8 +88,8 @@ const YoutubeVideoModal = () => {
             onClick={() => setShowModal(false)}
             dangerouslySetInnerHTML={{
               __html: parsedValue.rawData.html
-                .replace('width="200"', `width="${window.innerWidth - 200}"`)
-                .replace('height="113"', `height="${window.innerHeight - 50}"`),
+                .replace('width="200"', `width="${screenWidth <= 700? screenWidth -30 : screenWidth -200}"`)
+                .replace('height="113"', `height="${screenWidth >= 1100? window.innerHeight - 50: 400}"`),
             }}
           />
         )}
