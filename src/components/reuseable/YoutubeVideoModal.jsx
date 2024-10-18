@@ -35,7 +35,7 @@ const YoutubeVideoModal = () => {
     const stopListening = onWidthChange((newWidth) => {
       setScreenWidth(newWidth);
     });
-    console.log(screenWidth >= 400? screenWidth : screenWidth - 200);
+    // console.log(screenWidth >= 400? screenWidth : screenWidth - 200);
     return () => stopListening();
 
   }, []);

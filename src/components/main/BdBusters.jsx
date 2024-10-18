@@ -13,6 +13,7 @@ const BdBusters = () => {
     allYtContent,
     setAllYtContent,
   } = useContext(VideoModalShower);
+  
   const { fetchedData } = useMediaFetcher(
     "https://proxy.gxcorner.games/new-content/corners/trailers/178/en",
     "get"
@@ -32,7 +33,7 @@ const BdBusters = () => {
     setShowModal(true);
     setYtContent({});
     setYtContent(e);
-    console.log("object");
+    // console.log("object");
   };
 
   return (

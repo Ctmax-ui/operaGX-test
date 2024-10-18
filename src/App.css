@@ -4,3 +4,20 @@ html {
     scroll-behavior: smooth;
     
 }
+
+
+.scrollbar-none{
+    -ms-overflow-style: none;
+    scrollbar-width: none !important;
+    scroll-behavior: smooth !important;
+}
+
+
+@media screen and (max-width:640px) {
+
+    .sm-scrollbar-none{
+        -ms-overflow-style: none;
+    scrollbar-width: none !important;
+    scroll-behavior: smooth !important;
+    }
+}

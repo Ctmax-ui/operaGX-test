@@ -23,7 +23,7 @@ const Sidebar = () => {
       <div
         className={`-translate-x-full ${
           sideBarShow ? "translate-x-0 w-64" : " w-0"
-        } transition-all duration-300 transform  top-0 start-0 bottom-0 z-[60] bg-white dark:bg-black dark:text-white border-e border-gray-200 pt-7 pb-4  lg:end-auto lg:bottom-0 h-full
+        } transition-all duration-300 transform  top-0 start-0 bottom-0 relative z-[10] bg-white dark:bg-black dark:text-white border-e 5xl:border-s border-gray-200 pt-7 pb-4  lg:end-auto lg:bottom-0 h-full
         `}
         role="dialog"
         tabIndex="-1"
@@ -32,7 +32,7 @@ const Sidebar = () => {
         <button
           className={` absolute right-0 top-0 ${
             sideBarShow ? " translate-x-5" : "translate-x-11"
-          } transition-all z-10 border border-slate-400 bg-white dark:bg-black dark:hover:text-black hover:text-white  hover:bg-black dark:hover:bg-white
+          } transition-all  border border-slate-400 bg-white dark:bg-black dark:hover:text-black hover:text-white  hover:bg-black dark:hover:bg-white
           rounded-full p-3 duration-300`}
           onClick={() => setSideBarShow(sideBarShow ? false : true)}
         >
@@ -77,7 +77,7 @@ const Sidebar = () => {
                 <li>
                   <Link
                     className="flex justify-between items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-700 rounded-lg hover:bg-gray-100 text-nowrap"
-                    to={"/gcallendar"}
+                    to={"/gcalendar"}
                   >
                     Game Callendar
                     <LuCalendarClock className="text-lg" />

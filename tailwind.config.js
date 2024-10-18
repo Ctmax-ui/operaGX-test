@@ -6,7 +6,14 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '5xl': '2000px',
+      },
+      width: {
+        '1500': '1500px',
+      },
+    },
   },
   plugins: [],
 }

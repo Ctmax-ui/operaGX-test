@@ -1,0 +1,9 @@
+.showItem{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.onhover:hover .showItem{
+    opacity: 1;
+    pointer-events: all;
+}
