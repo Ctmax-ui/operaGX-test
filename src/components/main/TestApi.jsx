@@ -35,7 +35,7 @@ const TestApi = () => {
     const fetch = async (param = 178) => {
         try {
           const result = await axios.get(
-            `https://proxy.gxcorner.games/new-content/corners/trailers/${param}/en`
+            `https://api.allorigins.win/get?url=https://speeddials.opera.com/api/v3/news?country=JP&language=en-US&locale=en_IN&category=en&timezone=+09:00`
           );
     
           console.log(param, result.data);

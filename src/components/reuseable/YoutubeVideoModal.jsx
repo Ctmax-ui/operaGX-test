@@ -46,11 +46,6 @@ const YoutubeVideoModal = () => {
       setParsedValue(JSON.parse(ytContent.trailer));
     }
   }, [ytContent]);
- 
- 
-
- 
-
 
   const changeVideo = (direction) => {
     if (!parsedValue) return;
@@ -65,9 +60,6 @@ const YoutubeVideoModal = () => {
     }
     setYtContent(allYtContent[newIndex]);
   };
-
-
-
 
   return (
     <>

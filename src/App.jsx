@@ -6,7 +6,7 @@ import BdBusters from "./components/main/BdBusters";
 import GameCallendar from "./components/main/gameCallender/GameCallendar";
 import "./App.css";
 import Settings from "./components/main/Settings";
-import RecentNews from "./components/main/RecentNews";
+import DailyNews from "./components/main/DailyNews";
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/bdBuster" element={<BdBusters />} />
             <Route path="/gcalendar" element={<GameCallendar />} />
-            <Route path="/news" element={<RecentNews />} />
+            <Route path="/news" element={<DailyNews />} />
 
             <Route path="/test" element={<TestApi />} />
             <Route path="/settings" element={<Settings />} />
