@@ -37,16 +37,20 @@ const YoutubeVideoModal = () => {
     });
     // console.log(screenWidth >= 400? screenWidth : screenWidth - 200);
     return () => stopListening();
-
   }, []);
+ 
+ 
 
   useEffect(() => {
     if (ytContent && ytContent.trailer) {
       setParsedValue(JSON.parse(ytContent.trailer));
     }
   }, [ytContent]);
+ 
+ 
 
-  
+ 
+
 
   const changeVideo = (direction) => {
     if (!parsedValue) return;
@@ -59,9 +63,11 @@ const YoutubeVideoModal = () => {
     } else if (direction === "prev") {
       newIndex = (currentIndex - 1 + allYtContent.length) % allYtContent.length;
     }
-
     setYtContent(allYtContent[newIndex]);
   };
+
+
+
 
   return (
     <>

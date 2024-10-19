@@ -38,6 +38,7 @@ const BdBusters = () => {
 
   return (
     <>
+    <h1 className="mb-7 text-center text-3xl font-bold text-gradient">Elevate Your Boredom to Excitement!</h1>
       <div className="flex relative flex-wrap justify-center gap-2">
         {fetchedData &&
           fetchedData.data.data.sectionType[0].trailers.map((value, index) => {
