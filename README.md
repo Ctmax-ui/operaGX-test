@@ -6,7 +6,7 @@ This project is intended for educational and personal testing purposes only. The
 
 By using or accessing this project, you acknowledge and agree to the following:
 
-1. **No Liability:** The creator, [Ctmax-ui/DEbjeet](https://github.com/Ctmax-ui/), is not responsible for any damages, losses, or legal issues that may arise from the use, misuse, or distribution of this project. This includes but is not limited to any damage to Opera, any company, or any individual.
+1. **No Liability:** The creator, [Ctmax-ui/Debjeet](https://github.com/Ctmax-ui/), is not responsible for any damages, losses, or legal issues that may arise from the use, misuse, or distribution of this project. This includes but is not limited to any damage to Opera, any company, or any individual.
 
 2. **Use at Your Own Risk:** The project is provided "as is," without any warranties or guarantees. Users are solely responsible for how they use the code and any consequences resulting from its usage.
 
